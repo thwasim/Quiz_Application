@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_of_centrric/app/src/view/result_screen/bindings/result_bindings.dart';
 import 'package:task_of_centrric/app/src/view/result_screen/result_screen.dart';
 import 'package:task_of_centrric/app/util/bindings_app.dart';
 import 'package:task_of_centrric/src/screens/quiz_screen/quiz_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: StartingScreen.routeName, page: () => StartingScreen()),
         GetPage(name: QuizScreen.routeName, page: () =>const QuizScreen()),
-        GetPage(name: ResultScreen.routeName, page: () =>const ResultScreen()),
+        GetPage(name: ResultScreen.routeName, page: () =>const ResultScreen(),binding: ResultBindings()),
       ],
     );
   }

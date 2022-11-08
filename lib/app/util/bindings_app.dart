@@ -5,5 +5,6 @@ class BilndingsApp implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => HomeScreenController());
+  
   }
 }

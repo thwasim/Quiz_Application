@@ -2,9 +2,10 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_of_centrric/app/src/controllers/quiz_controller.dart';
+import 'package:task_of_centrric/app/src/view/result_screen/controller/result_controller.dart';
 import 'package:task_of_centrric/app/src/widgets/custom_button.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends GetView<ResultController> {
   const ResultScreen({Key? key}) : super(key: key);
 
   static const routeName = '/result_screen';
@@ -54,16 +55,11 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          GetBuilder<HomeScreenController>(
-            init: Get.find<HomeScreenController>(),
-            builder: (controller) {
-              return ConfettiWidget(
-                confettiController: controller.confettiController,
-                shouldLoop: true,
-                blastDirectionality: BlastDirectionality.explosive,
-              );
-            },
-          ),
+          ConfettiWidget(
+            confettiController: controller.confettiController,
+            shouldLoop: true,
+            blastDirectionality: BlastDirectionality.explosive,
+          )
         ],
       ),
     );
