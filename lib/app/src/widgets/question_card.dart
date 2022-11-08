@@ -21,14 +21,16 @@ class QuestionCard extends StatelessWidget {
             padding: const EdgeInsets.only(right: 10, left: 10, top: 25),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black87,
+                  color: const Color.fromARGB(221, 30, 30, 30),
                   borderRadius: BorderRadius.circular(30)),
               child: Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Text(
                   questionModel.question,
-                  style: const TextStyle(color: Colors.white,
-                      fontSize: 19, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),

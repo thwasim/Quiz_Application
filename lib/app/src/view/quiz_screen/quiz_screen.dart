@@ -5,7 +5,6 @@ import 'package:task_of_centrric/app/src/widgets/custom_button.dart';
 import 'package:task_of_centrric/app/src/widgets/progress_timer.dart';
 import 'package:task_of_centrric/app/src/widgets/question_card.dart';
 
-
 class QuizScreen extends StatelessWidget {
   const QuizScreen({Key? key}) : super(key: key);
 
@@ -17,7 +16,6 @@ class QuizScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(
-          // alignment: Alignment.topCenter,
           children: [
             Container(
               decoration: const BoxDecoration(color: Colors.black87),
@@ -39,7 +37,9 @@ class QuizScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline4!
-                                    .copyWith(color: const Color.fromARGB(255, 0, 0, 0)),
+                                    .copyWith(
+                                        color:
+                                            const Color.fromARGB(255, 0, 0, 0)),
                                 children: [
                                   TextSpan(
                                       text: controller.numberOfQuestion
@@ -48,19 +48,26 @@ class QuizScreen extends StatelessWidget {
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline4!
-                                          .copyWith(color: const Color.fromARGB(255, 244, 36, 36))),
+                                          .copyWith(
+                                              color: const Color.fromARGB(
+                                                  255, 244, 36, 36))),
                                   TextSpan(
                                       text: '/',
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5!
-                                          .copyWith(color: const Color.fromARGB(255, 201, 52, 52))),
+                                          .copyWith(
+                                              color: const Color.fromARGB(
+                                                  255, 201, 52, 52))),
                                   TextSpan(
-                                      text: controller.countOfQuestion.toString(),
+                                      text:
+                                          controller.countOfQuestion.toString(),
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5!
-                                          .copyWith(color: const Color.fromARGB(255, 210, 50, 50))),
+                                          .copyWith(
+                                              color: const Color.fromARGB(
+                                                  255, 210, 50, 50))),
                                 ]),
                           ),
                           ProgressTimer(),

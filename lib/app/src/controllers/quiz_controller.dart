@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_of_centrric/app/src/model/question_model.dart';
 import 'package:task_of_centrric/app/src/view/result_screen/result_screen.dart';
-import 'package:task_of_centrric/src/screens/welcome/welcome_screen.dart';
+import 'package:task_of_centrric/app/src/view/welcome/welcome_screen.dart';
 
 class HomeScreenController extends GetxController {
   String name = '';
@@ -140,13 +139,10 @@ class HomeScreenController extends GetxController {
 
   RxInt get sec => _sec;
 
-  final confettiController = ConfettiController();
-
   @override
   void onInit() {
     pageController = PageController(initialPage: 0);
     resetAnswer();
-    animation();
     super.onInit();
   }
 
@@ -229,22 +225,23 @@ class HomeScreenController extends GetxController {
 
   void startingTimer() {
     resetTime();
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (_sec.value > 0) {
-        _sec.value--;
-      } else {
-        timeStoping();
-        nextQuestion();
-      }
-    },);
+    _timer = Timer.periodic(
+      const Duration(seconds: 1),
+      (timer) {
+        if (_sec.value > 0) {
+          _sec.value--;
+        } else {
+          timeStoping();
+          nextQuestion();
+        }
+      },
+    );
   }
 
   void resetTime() => _sec.value = maxSec;
 
-  void animation() => confettiController.play();
-
   void timeStoping() => _timer!.cancel();
-  
+
   void startAgain() {
     _correctAnswer = null;
     _countOfCorrectAnswers = 0;

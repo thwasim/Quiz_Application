@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_of_centrric/app/src/controllers/quiz_controller.dart';
+import 'package:task_of_centrric/app/src/view/quiz_screen/quiz_screen.dart';
 import 'package:task_of_centrric/app/src/widgets/custom_button.dart';
 import 'package:task_of_centrric/constants.dart';
-import 'package:task_of_centrric/src/screens/quiz_screen/quiz_screen.dart';
-
 
 class StartingScreen extends StatelessWidget {
   StartingScreen({Key? key}) : super(key: key);
@@ -36,7 +35,10 @@ class StartingScreen extends StatelessWidget {
               height: 150,
             ),
             const Text('Let\'s start Quiz,',
-                style: TextStyle(color: cPrimaryColor,fontSize: 25,fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                    color: cPrimaryColor,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold)),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
@@ -60,8 +62,7 @@ class StartingScreen extends StatelessWidget {
                     if (value!.isEmpty) {
                       return ("Please Enter Your Name");
                     }
-                    if (!RegExp("^[a-zA-Z0-9+_.-]")
-                        .hasMatch(value)) {
+                    if (!RegExp("^[a-zA-Z0-9+_.-]").hasMatch(value)) {
                       return ("Please Enter a valid Name");
                     }
                     return null;
@@ -79,9 +80,10 @@ class StartingScreen extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: CustomButton(
-                  width: double.infinity,
-                  onPressed: () => _submit(context),
-                  text: 'Lets Start Quiz'),
+                width: double.infinity,
+                onPressed: () => _submit(context),
+                text: 'Lets Start Quiz',
+              ),
             ),
             const Spacer(
               flex: 2,

@@ -39,7 +39,10 @@ class OptionScreen extends StatelessWidget {
                 RichText(
                   text: TextSpan(
                     text: '${index + 1}.    ',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6!
+                        .copyWith(color: Colors.white),
                     children: [
                       TextSpan(
                         text: text,

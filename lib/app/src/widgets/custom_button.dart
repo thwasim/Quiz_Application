@@ -19,15 +19,9 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: FloatingActionButton.extended(
-        // backgroundColor: cPrimaryColor,
         onPressed: onPressed,
-        label: Text(
-          text,
-          style: Theme.of(context)
-              .textTheme
-              .headline6!
-              // .copyWith(color: Colors.white),
-        ),
+        label: Text(text,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
     );
   }
